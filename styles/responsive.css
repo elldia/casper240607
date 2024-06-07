@@ -1,0 +1,7 @@
+/* 첫 설계(style.css)를 Desktop 큰 화면 기준으로 했기 때문에 max-width 부터 반응형 진행 */
+@media screen and (max-width:920px){
+    /* 데스크탑 메뉴 숨기기 */
+    header > nav {display:none;}
+    /* 모바일 메뉴(햄버거 스타일) 보이기 */
+    header .lnb .m_nav {display:block;}
+}

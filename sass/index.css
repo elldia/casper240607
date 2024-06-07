@@ -1,0 +1,215 @@
+@charset "UTF-8";
+header {
+  height: 70px;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  padding: 0 15px;
+}
+header > nav .sub_bg {
+  background-color: #fff;
+  height: 220px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  top: 70px;
+}
+header > nav .gnb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+header > nav .gnb > li:last-child {
+  margin: 0;
+}
+header > nav .gnb > li {
+  margin-right: 100px;
+  position: relative;
+}
+header > nav .gnb > li .sub {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  width: -moz-max-content;
+  width: max-content;
+  top: 50px;
+}
+header > nav .gnb > li .sub li a {
+  font-size: 0.91rem;
+  display: block;
+  white-space: nowrap;
+  line-height: 30px;
+}
+header > nav .gnb > li .sub li a img {
+  width: 170px;
+}
+header .lnb {
+  display: flex;
+}
+header .lnb .m_nav {
+  display: none;
+}
+header .lnb .m_nav .all_nav {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+header .lnb .m_nav .all_nav img {
+  width: 100%;
+}
+header .lnb .m_nav nav {
+  display: none; /*초기 숨기기(이후 JS처리)*/
+  z-index: 900;
+  position: absolute;
+  right: 0;
+  top: 70px;
+  background-color: #fff;
+  width: 300px;
+  height: calc(100vh - 70px);
+}
+header .lnb .m_nav nav .gnb > li > a {
+  display: block;
+  border-bottom: 1px solid #002c5f;
+  margin: 0 10px;
+  line-height: 40px;
+}
+header .lnb .m_nav nav .gnb > li .sub li a {
+  display: block;
+  border-bottom: 1px dashed #ddd;
+  margin: 0 25px;
+  line-height: 40px;
+}
+header .lnb .m_nav nav .gnb > li .sub li a img {
+  width: 70%;
+}
+header .lnb .notice {
+  background-position-x: right;
+}
+header .lnb > a {
+  background-image: url(../images/ico_header.png);
+  width: 20px;
+  height: 25px;
+  margin-left: 12px;
+}
+header .lnb > a span {
+  display: none;
+}
+
+main {
+  margin-top: 70px;
+}
+main .visual {
+  position: relative;
+  background-image: url(../images/visual.png);
+  background-position: center;
+  background-size: cover;
+  height: calc(100vh - 70px);
+}
+main .visual .txt {
+  text-align: center;
+  padding-top: 50px;
+  color: #fff;
+}
+main .visual .txt h1 {
+  font-size: 5rem;
+  font-weight: 800;
+}
+main .visual .txt p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+main .visual .txt .link a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #002c5f;
+  color: #fff;
+}
+main .visual .scroll {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 50px;
+  animation: move 1s alternate ease infinite;
+}
+main .visual .scroll img {
+  width: 50px;
+  filter: invert(1);
+}
+main .advantage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  padding: 100px 15px;
+}
+main .advantage .title {
+  background: aqua;
+  width: 500px;
+  align-self: flex-start;
+}
+main .advantage .title h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+main .advantage .title h1 em {
+  font-weight: 700;
+}
+main .advantage .title p {
+  color: #888;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+main .advantage .contents {
+  background: yellow;
+  width: calc(100% - 500px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+main .advantage .contents a {
+  margin-right: 20px;
+}
+main .advantage .contents a .photo + p {
+  margin: 6px 0;
+}
+main .advantage .contents a h2 {
+  color: #888;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color: #002c5f;
+}
+main .advantage .contents a h2 em {
+  background: #002c5f;
+  color: #fff;
+}
+main .design {
+  padding: 100px 15px;
+  position: relative;
+}
+main .design h1 {
+  font-size: 15rem;
+  font-weight: 900;
+  color: #ddd;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  z-index: -1;
+}
+main .design .photo {
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */

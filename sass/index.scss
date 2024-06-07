@@ -1,0 +1,127 @@
+@import 'common';
+//common.scss 변수 및 mixin 이용해서 중첩 선택자 규칙으로 디자인만들기
+header {
+    height:70px; background-color:$bg_white;
+    @include pst_fixed; width:$w100;
+    @include flex-r; padding:0 $p15;
+    h1 {a {img {}}}
+    > nav {
+        .sub_bg {
+            background-color:$bg_white; height:220px;
+            @include pst_absol; top:70px;
+        }
+        .gnb {@include flex-r;
+            > li:last-child {margin:0;}
+            > li {
+                margin-right:$m-r100; position:relative;
+                a {}
+                .sub {@include pst_absol; width:max-content; top:50px;
+                    li {
+                        a{
+                            font-size:$font91;
+                            display:block; white-space:nowrap; 
+                            line-height:$l-h30;
+                            img {width:170px;}
+                    }}
+                }
+            }
+        }
+    }
+    .lnb {display:flex;
+        .m_nav {display:none;
+            .all_nav {display:block; width:24px; height:24px;
+                img {width:100%;}
+            }
+            // 모바일 전용 내비게이션(m_nav 자식 nav)
+            nav { display:none;/*초기 숨기기(이후 JS처리)*/
+                z-index:900;
+                position:absolute; right:0; top:70px;
+                background-color:#fff;
+                width:300px; height:calc(100vh - 70px);
+                .sub_bg{}
+                .gnb {>li{
+                    > a {
+                        display:block;
+                        border-bottom:1px solid #002c5f;
+                        margin:0 10px;
+                        line-height:40px;
+                    }
+                    .sub{
+                    li{a{
+                        display:block;
+                        border-bottom:1px dashed #ddd;
+                        margin:0 25px; line-height:40px;
+                        img {width:70%;}
+                    }}}}}
+            }
+        }
+        .my_menu {}
+        .notice {background-position-x:right;}
+        > a {
+            background-image:url(../images/ico_header.png);
+            width:20px; height:25px;
+            margin-left:12px;
+            span {display:none;}
+        }
+    }
+}
+// -----------main
+main {margin-top:70px;
+    .visual {
+        position:relative;
+        background-image:url(../images/visual.png);
+        background-position:center;
+        background-size:cover;
+        height:calc(100vh - 70px);
+        .txt {
+            text-align:center; padding-top:50px; color:#fff;
+            h1 {font-size:5rem; font-weight:800;}
+            p {margin:20px 0; font-size:1.2rem;}
+            .link {
+                a {
+                    display:inline-block; padding:10px 20px;
+                    background-color:#002c5f; color:#fff;
+                }
+            }
+        }
+        .scroll {
+            text-align:center;
+            position:absolute; width:100%; bottom:50px;
+            animation:move 1s alternate ease infinite;
+            img {width:50px; filter:invert(1)}
+        }
+    }//visual end
+    .advantage {
+        @include flex-r; @include layout_p;
+        .title { background :aqua;
+            width:500px; align-self:flex-start;
+            h1 {@include title-level-1;
+                em {font-weight:700;}
+            }
+            p {@include title-level-2;}
+        }
+        .contents { background:yellow;
+            width:calc(100% - 500px); @include flex-r;
+            overflow-x:auto; overflow-y:hidden;
+            a {margin-right:20px;
+                .photo {
+                    img{}
+                }
+                .photo+p {margin:6px 0;}
+                h2 {@include title-level-2; color:$main-color;
+                    em{background:$main-color; color:#fff;}
+                }
+            }
+        }
+    }//advantage end
+    .design {@include layout_p; position:relative;
+        h1 {
+            font-size:15rem; font-weight:900; color:#ddd;
+            @include pst_absol; text-align:center;
+            z-index:-1;
+        }
+        .photo {text-align:center;
+            img {}
+        }
+    }//design end
+}//main end
